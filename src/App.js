@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+// @ts-nocheck
 import './App.css';
+import Children from './components/children/Children';
+import NewChildren from './components/children/Children';
+import Content from './components/content/Content';
+import Navbar from './components/Navabr/Navbar';
 
 function App() {
+  const data = [
+    {
+      id: 1,
+      name: 'Piłka'
+    },
+    {
+      id: 2,
+      name: 'But'
+    },
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Navbar /> */}
+      {/* <Content /> */}
+      {/* {
+        data.map((d) =>
+          <Children number={d.id}>
+            <Title number={d.name}>
+
+            </Title>
+          </Children>
+        )
+      } */}
+      {
+        data.map((d) => <Children data={d} />)
+      }
+
     </div>
   );
 }
